@@ -1,0 +1,157 @@
+/* ── Hero ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Meie+Script&display=swap');
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  /* To change hero image: edit the backgroundImage URL in Hero.jsx */
+  transform: scale(1.03);
+  transition: transform 8s ease;
+}
+
+.hero__bg:hover {
+  transform: scale(1);
+}
+
+/* Gradient overlay — darkens the image so text is readable */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(5, 5, 5, 0.82) 0%,
+    rgba(5, 5, 5, 0.55) 60%,
+    rgba(5, 5, 5, 0.25) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 64px;
+  padding-top: 72px; /* offset for fixed navbar */
+}
+
+.hero__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+
+.hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.08;
+  margin-bottom: 28px;
+}
+
+/* Italic "of Clean." emphasis */
+.hero__title em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero__subtitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.75;
+  margin-bottom: 48px;
+  max-width: 440px;
+}
+
+/* CTA buttons */
+.hero__actions {
+  
+  display: flex;
+  gap: px;
+  flex-wrap: wrap;
+  
+  
+}
+
+.btn-primary {
+  font-family: var(--font-sans);
+  position: relative; /* anchor for underline */
+  
+  background: none;
+  border: none;
+  padding: 0;
+
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* underline */
+.btn-primary::after {
+  content: '';
+  position: absolute; /* moves relative to text */
+
+  left: 0;
+  bottom: -5px;
+
+  width: 0%;
+  height: 2px;
+  background: rgb(255, 255, 255);
+
+  transition: width 0.3s ease;
+}
+
+.btn-primary:hover::after {
+  width: 100%;
+}
+/* Animated scroll indicator */
+.hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.hero__scroll-line {
+  display: block;
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(0.85); }
+}
+
+@media (max-width: 768px) {
+  .hero__content { padding: 0 28px; padding-top: 72px; }
+  .hero__title { font-size: 3rem; }
+}

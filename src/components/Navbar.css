@@ -1,0 +1,155 @@
+/* ── Navbar ─────────────────────────────────────────────────
+   Transparent when over the hero, dark when scrolled.
+   To change navbar height: edit the height value below.
+   ─────────────────────────────────────────────────────────── */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 72px;
+  background: transparent;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Solid background once user scrolls past the hero */
+.navbar--solid {
+  background: black;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 1px;
+}
+
+.navbar__logo-main {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 6px;
+  line-height: 1;
+}
+
+.navbar__logo-sub {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+/* Desktop nav links */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.navbar__link {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 2px;
+  transition: color 0.2s;
+}
+
+.navbar__link:hover {
+  color: var(--white);
+}
+
+/* Hamburger */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.navbar__hamburger--open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.navbar__hamburger--open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__hamburger--open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Mobile dropdown */
+.navbar__mobile {
+  display: none;
+  flex-direction: column;
+  background: var(--black);
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s;
+}
+
+.navbar__mobile--open {
+  max-height: 300px;
+  padding: 12px 0;
+}
+
+.navbar__mobile-link {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.navbar__mobile-link:hover {
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .navbar__nav { display: none; }
+  .navbar__hamburger { display: flex; }
+  .navbar__mobile { display: flex; }
+}

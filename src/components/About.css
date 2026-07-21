@@ -1,0 +1,197 @@
+/* ── About ───────────────────────────────────────────────── */
+
+.about {
+  background: var(--white);
+}
+
+/* Full-width image banner */
+.about__visual {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+
+.about__visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.about__visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(5, 5, 5, 0.72) 0%,
+    rgba(5, 5, 5, 0.3) 70%,
+    transparent 100%
+  );
+}
+
+.about__visual-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 64px 52px;
+}
+
+.about__visual-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.5vw, 1.85rem);
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 540px;
+  line-height: 1.5;
+}
+
+/* Two-column content */
+.about__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 88px 32px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Left column */
+.about__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+
+.about__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+
+.about__title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.about__body {
+  font-family: var(--font-sans);
+  font-size: 0.93rem;
+  font-weight: 300;
+  color: var(--warm-gray);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+/* Contact info — clean table layout, no emojis */
+.about__contact {
+  margin-top: 36px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 28px;
+}
+
+.about__contact-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0ede8;
+}
+
+.about__contact-item:last-child {
+  border-bottom: none;
+}
+
+.about__contact-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  padding-top: 2px;
+}
+
+.about__contact-value {
+  font-family: var(--font-sans);
+  font-size: 0.83rem;
+  font-weight: 300;
+  color: var(--warm-gray);
+  line-height: 1.55;
+}
+
+/* Right column: certifications */
+.about__cert-heading {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  margin-bottom: 28px;
+}
+
+.about__certs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about__cert-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.about__cert-card:first-child {
+  border-top: 1px solid var(--border-light);
+}
+
+.about__cert-num {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--light-gray);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 32px;
+  /* To change the numbering color: edit this directly */
+}
+
+.about__cert-title {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 5px;
+}
+
+.about__cert-detail {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--warm-gray);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about__inner {
+    grid-template-columns: 1fr;
+    gap: 52px;
+    padding: 64px 24px;
+  }
+  .about__visual { height: 300px; }
+  .about__visual-text { padding: 0 28px 36px; }
+}
