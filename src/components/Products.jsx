@@ -1,19 +1,6 @@
 import React, { useState } from 'react'
 import './Products.css'
 
-/* ══════════════════════════════════════════════════════════════
-   PRODUCT DATA — sourced from Reona brochure
-   ──────────────────────────────────────────────────────────────
-   HOW TO EDIT:
-   - "name"        → product name displayed on the card
-   - "tag"         → category label (top-left badge on card)
-   - "specialty"   → bold tagline under the image
-   - "specs"       → bullet list of key specifications
-   - "image"       → URL of the product photo
-                     Replace with your own product photo path:
-                     e.g. '/images/kspv1s-mop.jpg'
-                     (put images in the /public/images/ folder)
-   ══════════════════════════════════════════════════════════════ */
 
 const products = [
   {
@@ -28,9 +15,9 @@ const products = [
       '36 pcs per carton (350g) · 24 pcs (550g)',
       '100% Export Quality',
     ],
-    // REPLACE: Use a close-up of the KSPV1S mop on a clean floor
+  
     image:
-       '/images/mop1.png'
+       'images/mop1.png'
   },
   {
     name: 'BL75 Natural Cotton Mop',
@@ -43,7 +30,7 @@ const products = [
       '36 pcs per carton (350g) · 24 pcs (550g)',
       '100% Export Quality',
     ],
-    // REPLACE: Use a photo of the BL75 white cotton mop head
+  
     image:
       'images/mop2.png',
   },
@@ -58,7 +45,7 @@ const products = [
       '36 pcs per carton (350g) · 24 pcs (550g)',
       '100% Export Quality',
     ],
-    // REPLACE: Use a photo of the NC2S ivory cotton mop
+    
     image:
       'images/mop3.png',
   },
@@ -74,12 +61,12 @@ const products = [
       '100% Extra Virgin Plastic clip',
       '100% Export Quality',
     ],
-    // REPLACE: Use a colourful mop head product photo (Red/Blue/Green/Yellow)
+   
     images: {
-        green: "/images/mop350-green.jpg",
-        red: "/images/mop350-red.jpg",
-        blue: "/images/mop350-blue.jpeg",
-        yellow: "/images/mop350-yellow.jpeg",
+        green: "images/mop350-green.jpg",
+        red: "images/mop350-red.jpg",
+        blue: "images/mop350-blue.jpeg",
+        yellow: "images/mop350-yellow.jpeg",
     },
   },
     {
@@ -94,12 +81,12 @@ const products = [
       '100% Extra Virgin Plastic clip',
       '100% Export Quality',
     ],
-    // REPLACE: Use a colourful mop head product photo (Red/Blue/Green/Yellow)
+
      images: {
-        red: "/images/mop550-red.jpeg",  
-        green: "/images/mop550-green.jpg",
-        blue: "/images/mop550-blue.jpeg",
-        yellow: "/images/mop550-yellow.jpeg",
+        red: "images/mop550-red.jpeg",  
+        green: "images/mop550-green.jpg",
+        blue: "images/mop550-blue.jpeg",
+        yellow: "images/mop550-yellow.jpeg",
     },
     defaultColor: "red",
   },
@@ -113,7 +100,7 @@ const products = [
       'Colours: Red & White, Blue & White',
       '100% Export Quality',
     ],
-    // REPLACE: Use a wide-frame photo of the airport/flat mop in use
+  
     image:
       'images/mop4.png',
   },
@@ -129,7 +116,6 @@ const products = [
     'Low Maintenance Design',
     'Ideal for Commercial & Industrial Use'
     ],
-    // REPLACE: Use a wide-frame photo of the airport/flat mop in use
     image:
       'images/airportmop.jpeg',
   },
@@ -463,14 +449,15 @@ function Products() {
 <div className="product-card__img-wrap">
 
   <img
-    src={
-      selectedImages[product.name] ||
-      product.image ||
-      product.images?.green
-    }
+src={
+  selectedImages[product.name] ||
+  product.image ||
+  product.images?.[product.defaultColor || "green"]
+}
     alt={product.name}
     className="product-card__img"
-    loading="lazy"
+      onLoad={() => console.log("Loaded:", product.name)}
+      onError={(e) => console.log("Failed:", e.target.src)}
   />
 
   <span className="product-card__tag">

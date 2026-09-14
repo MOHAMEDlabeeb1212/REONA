@@ -1,28 +1,17 @@
 import React from 'react'
 import './About.css'
 
-/* ─── Certification data from brochure ──────────────────────
-   To edit: change "title" or "detail" for any item below.
-   ─────────────────────────────────────────────────────────── */
 const certifications = [
-  { title: 'ISO 9001 : 2015',  detail: 'Quality Management System Certified' },
-  { title: 'Made in India',    detail: 'Designed in Italy' },
-  { title: '100% Export',      detail: 'Export Quality — Globally Certified' },
-  { title: 'Since 1999',       detail: 'Over 25 Years of Manufacturing Excellence' },
+  { title: 'ISO 9001 : 2015', detail: 'Quality Management System Certified' },
+  { title: 'Made in India', detail: 'Designed in Italy' },
+  { title: '100% Export', detail: 'Export Quality — Globally Certified' },
+  { title: 'Since 1999', detail: 'Over 25 Years of Manufacturing Excellence' },
 ]
 
 function About() {
   return (
     <section id="about" className="about">
-
-      {/* Top: full-width background image panel */}
       <div className="about__visual">
-        {/* ─── ABOUT SECTION IMAGE ────────────────────────────────
-            REPLACE: swap this URL with a photo of your
-            factory floor, production line, or a lifestyle
-            image of Reona products in a clean home setting.
-            Recommended size: 1600x700px, landscape.
-            ────────────────────────────────────────────────────── */}
         <img
           src="images/lastpic.jpeg"
           alt="Reona International — manufacturing excellence"
@@ -35,11 +24,7 @@ function About() {
           </p>
         </div>
       </div>
-
-      {/* Bottom: two-column content */}
       <div className="about__inner">
-
-        {/* Left column: company text */}
         <div className="about__left">
           <p className="about__eyebrow">About Reona</p>
           <h2 className="about__title">
@@ -58,8 +43,6 @@ function About() {
             quality standards, trusted across homes, hotels, hospitals,
             and commercial institutions worldwide.
           </p>
-
-          {/* Contact details — no emojis, clean list layout */}
           <div className="about__contact">
             <div className="about__contact-item">
               <span className="about__contact-label">Head Office</span>
@@ -87,8 +70,6 @@ function About() {
             </div>
           </div>
         </div>
-
-        {/* Right column: certifications */}
         <div className="about__right">
           <p className="about__cert-heading">Certifications &amp; Standards</p>
           <div className="about__certs">

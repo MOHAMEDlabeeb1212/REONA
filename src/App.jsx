@@ -6,7 +6,6 @@ import Products  from './components/Products'
 import About     from './components/About'
 import Contact   from './components/Contact'
 import Footer    from './components/Footer'
-import mop from './assets/mop.jpg'
 
 /* ─── How to add / remove a section ────────────────────────────
    1. Create a new component file in src/components/
@@ -24,7 +23,6 @@ function App() {
       <About />
       <Contact />
       <Footer />
-      <mop />
     </>
   )
 }

@@ -1,9 +1,7 @@
 import React from 'react'
 import './Stats.css'
 
-/* ─── How to edit stats ────────────────────────────────────
-   Change "value" or "label" for any of the 4 items below.
-   ─────────────────────────────────────────────────────────── */
+
 const stats = [
   { value: '1999', label: 'Established' },
   { value: 'ISO',  label: '9001 : 2015 Certified' },

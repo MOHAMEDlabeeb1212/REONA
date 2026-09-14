@@ -27,18 +27,45 @@ function Contact() {
     if (errors[e.target.name]) setErrors({ ...errors, [e.target.name]: '' })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const errs = validate(form)
-    if (Object.keys(errs).length) { setErrors(errs); return }
-    setSubmitted(true)
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const errs = validate(form);
+
+  if (Object.keys(errs).length > 0) {
+    setErrors(errs);
+    return;
   }
+
+  const message = `
+REONA INTERNATIONAL
+
+New Website Enquiry
+
+Name: ${form.name}
+
+Company: ${form.company || "Not Provided"}
+
+Email: ${form.email}
+
+Phone: ${form.phone || "Not Provided"}
+
+Message:
+${form.message}
+  `;
+
+  const url =
+    "https://wa.me/919895845343?text=" +
+    encodeURIComponent(message);
+  console.log(url);
+  window.open(url, "_blank");
+};
 
   return (
     <section id="contact" className="contact">
       <div className="contact__inner">
 
-        {/* Left: heading and contact details */}
+        
         <div className="contact__left">
           <p className="contact__eyebrow">Get in Touch</p>
           <h2 className="contact__title">
@@ -50,7 +77,6 @@ function Contact() {
             our team is ready to assist.
           </p>
 
-          {/* Contact details — no emojis */}
           <div className="contact__details">
             <div className="contact__detail-row">
               <span className="contact__detail-label">Head Office</span>
@@ -75,7 +101,6 @@ function Contact() {
           </div>
         </div>
 
-        {/* Right: form */}
         <div className="contact__right">
           {submitted ? (
             <div className="contact__success">
