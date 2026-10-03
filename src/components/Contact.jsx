@@ -10,16 +10,16 @@ const initialForm = { name: '', company: '', email: '', phone: '', message: '' }
 
 function validate(form) {
   const errors = {}
-  if (!form.name.trim())    errors.name    = 'Name is required.'
+  if (!form.name.trim()) errors.name = 'Name is required.'
   if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email))
-                             errors.email   = 'A valid email is required.'
+    errors.email = 'A valid email is required.'
   if (!form.message.trim()) errors.message = 'Please enter your message.'
   return errors
 }
 
 function Contact() {
-  const [form,      setForm]      = useState(initialForm)
-  const [errors,    setErrors]    = useState({})
+  const [form, setForm] = useState(initialForm)
+  const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (e) => {
@@ -27,17 +27,17 @@ function Contact() {
     if (errors[e.target.name]) setErrors({ ...errors, [e.target.name]: '' })
   }
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const errs = validate(form);
+    const errs = validate(form);
 
-  if (Object.keys(errs).length > 0) {
-    setErrors(errs);
-    return;
-  }
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs);
+      return;
+    }
 
-  const message = `
+    const message = `
 REONA INTERNATIONAL
 
 New Website Enquiry
@@ -54,18 +54,18 @@ Message:
 ${form.message}
   `;
 
-  const url =
-    "https://wa.me/919895845343?text=" +
-    encodeURIComponent(message);
-  console.log(url);
-  window.open(url, "_blank");
-};
+    const url =
+      "https://wa.me/919895845343?text=" +
+      encodeURIComponent(message);
+    console.log(url);
+    window.open(url, "_blank");
+  };
 
   return (
     <section id="contact" className="contact">
       <div className="contact__inner">
 
-        
+
         <div className="contact__left">
           <p className="contact__eyebrow">Get in Touch</p>
           <h2 className="contact__title">
@@ -81,13 +81,13 @@ ${form.message}
             <div className="contact__detail-row">
               <span className="contact__detail-label">Head Office</span>
               <span className="contact__detail-value">
-                12/469/A &amp; B, Kottakkal, Kerala — 676 503
+                First Floor, Door No. 7/119,7/120, Opp. Ayurveda College, Kottakal, Kerala, Pin- 676 501
               </span>
             </div>
             <div className="contact__detail-row">
-              <span className="contact__detail-label">Corporate</span>
+              <span className="contact__detail-label">Manufacturing</span>
               <span className="contact__detail-value">
-                No. 8, Jaya Plaza, Annanur, Chennai — 109
+                Door No.14/182 A, Kudi Street, Thennilai, Karur, Tamil Nadu, Pin- 621 301
               </span>
             </div>
             <div className="contact__detail-row">

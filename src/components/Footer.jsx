@@ -9,20 +9,20 @@ const navColumns = [
   {
     heading: 'Navigate',
     links: [
-      { label: 'Home',     target: 'hero'     },
+      { label: 'Home', target: 'hero' },
       { label: 'Products', target: 'products' },
-      { label: 'About',    target: 'about'    },
-      { label: 'Contact',  target: 'contact'  },
+      { label: 'About', target: 'about' },
+      { label: 'Contact', target: 'contact' },
     ],
   },
   {
     heading: 'Products',
     links: [
-      { label: 'Mops',    target: 'products' },
-      { label: 'Wipers',  target: 'products' },
+      { label: 'Mops', target: 'products' },
+      { label: 'Wipers', target: 'products' },
       { label: 'Brushes', target: 'products' },
-      { label: 'Brooms',  target: 'products' },
-      { label: 'Towels',  target: 'products' },
+      { label: 'Brooms', target: 'products' },
+      { label: 'Towels', target: 'products' },
     ],
   },
 ]
@@ -69,10 +69,10 @@ function Footer() {
           <div className="footer__col">
             <p className="footer__col-heading">Contact</p>
             <ul className="footer__contact-list">
-              <li>Kottakkal, Kerala — 676 503</li>
+              <li>First Floor, Door No. 7/119,7/120, Opp. Ayurveda College, Kottakal, Kerala, Pin- 676 501</li>
               <li>+91 98958 45343</li>
               <li>reonainternational@gmail.com</li>
-              <li>www.reona.in</li>
+              <li><a href="https://reonainternational.com/">www.reonainternational.com</a></li>
             </ul>
           </div>
 

@@ -47,13 +47,13 @@ function About() {
             <div className="about__contact-item">
               <span className="about__contact-label">Head Office</span>
               <span className="about__contact-value">
-                12/469/A & 12/469/B, Kottakkal, Kerala — 676 503
+                First Floor, Door No. 7/119,7/120, Opp. Ayurveda College, Kottakal, Kerala, Pin- 676 501
               </span>
             </div>
             <div className="about__contact-item">
-              <span className="about__contact-label">Corporate Office</span>
+              <span className="about__contact-label">Manufacturing</span>
               <span className="about__contact-value">
-                No. 8, Jaya Plaza, 60 Feet Road, Annanur, Chennai — 109
+                Door No.14/182 A, Kudi Street, Thennilai, Karur, Tamil Nadu, Pin- 621 301
               </span>
             </div>
             <div className="about__contact-item">
@@ -66,7 +66,7 @@ function About() {
             </div>
             <div className="about__contact-item">
               <span className="about__contact-label">Web</span>
-              <span className="about__contact-value">www.reona.in</span>
+              <span className="about__contact-value"><a href="https://reonainternational.com/">reonainternational.com</a></span>
             </div>
           </div>
         </div>
